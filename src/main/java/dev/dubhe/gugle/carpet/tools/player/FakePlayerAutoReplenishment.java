@@ -2,6 +2,7 @@ package dev.dubhe.gugle.carpet.tools.player;
 
 import dev.dubhe.gugle.carpet.GcaSetting;
 import dev.dubhe.gugle.carpet.util.ContainerUtil;
+import dev.dubhe.gugle.carpet.util.FakePlayerUtil;
 import dev.dubhe.gugle.carpet.util.InventoryUtil;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerPlayer;
@@ -21,7 +22,7 @@ public class FakePlayerAutoReplenishment {
         if (half <= base) return;
         NonNullList<ItemStack> itemStackList = InventoryUtil.getItems(fakePlayer);
         if (!replenishment(fakePlayer, handItem, itemStackList, half) && GcaSetting.fakePlayerToolDamagedNotification) {
-            FakePlayerNotification.sendRestockFailed(fakePlayer, handItem);
+            FakePlayerUtil.sendRestockFailed(fakePlayer, handItem);
         }
     }
 

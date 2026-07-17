@@ -2,6 +2,7 @@ package dev.dubhe.gugle.carpet.tools.player;
 
 import dev.dubhe.gugle.carpet.GcaSetting;
 import dev.dubhe.gugle.carpet.util.ContainerUtil;
+import dev.dubhe.gugle.carpet.util.FakePlayerUtil;
 import dev.dubhe.gugle.carpet.util.InventoryUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -55,7 +56,7 @@ public class FakePlayerAutoReplaceTool {
         if (info == null) return;
         Predicate<ItemStack> predicate = itemReplacePredicate(info.item);
         if (!replaceTool(info.slot, predicate, player) && GcaSetting.fakePlayerToolDamagedNotification) {
-            FakePlayerNotification.sendRestockFailed(player, info.item);
+            FakePlayerUtil.sendRestockFailed(player, info.item);
         }
     }
 

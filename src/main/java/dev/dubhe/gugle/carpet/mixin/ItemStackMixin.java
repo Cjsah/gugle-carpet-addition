@@ -6,7 +6,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.dubhe.gugle.carpet.GcaSetting;
 import dev.dubhe.gugle.carpet.tools.player.FakePlayerAutoReplaceTool;
 
-import dev.dubhe.gugle.carpet.tools.player.FakePlayerNotification;
+import dev.dubhe.gugle.carpet.util.FakePlayerUtil;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -77,7 +77,7 @@ abstract class ItemStackMixin {
         if (!"false".equals(GcaSetting.fakePlayerAutoReplaceTool)) {
             FakePlayerAutoReplaceTool.checkFakePlayerShouldReplaceTool(fakePlayer, beforeItem.getItem(), equipmentSlot);
         } else if (GcaSetting.fakePlayerToolDamagedNotification && itemStack.isEmpty()) { // 如果开了工具替换, 替换后再确认是否通知
-            FakePlayerNotification.sendToolDamaged(fakePlayer, beforeItem);
+            FakePlayerUtil.sendToolDamaged(fakePlayer, beforeItem);
         }
     }
     //#else
@@ -100,7 +100,7 @@ abstract class ItemStackMixin {
     //$$         if (!"false".equals(GcaSetting.fakePlayerAutoReplaceTool)) {
     //$$             FakePlayerAutoReplaceTool.checkFakePlayerShouldReplaceTool(fakePlayer, beforeItem.getItem(), itemStack);
     //$$         } else if (GcaSetting.fakePlayerToolDamagedNotification && itemStack.isEmpty()) { // 如果开了工具替换, 替换后再确认是否通知
-    //$$             FakePlayerNotification.sendToolDamaged(fakePlayer, beforeItem);
+    //$$             FakePlayerUtil.sendToolDamaged(fakePlayer, beforeItem);
     //$$         }
     //$$     }
     //$$ }
