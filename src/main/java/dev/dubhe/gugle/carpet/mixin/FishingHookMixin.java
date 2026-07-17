@@ -2,7 +2,7 @@ package dev.dubhe.gugle.carpet.mixin;
 
 import carpet.patches.EntityPlayerMPFake;
 import dev.dubhe.gugle.carpet.GcaSetting;
-import dev.dubhe.gugle.carpet.tools.player.FakePlayerAutoFish;
+import dev.dubhe.gugle.carpet.util.FakePlayerUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.projectile.FishingHook;
@@ -21,7 +21,7 @@ abstract class FishingHookMixin {
     private void catchingFish(BlockPos pos, CallbackInfo ci) {
         Entity entity = gca$self.getOwner();
         if (GcaSetting.fakePlayerAutoFish && entity instanceof EntityPlayerMPFake player) {
-            FakePlayerAutoFish.autoFish(player);
+            FakePlayerUtil.autoFish(player);
         }
     }
 }

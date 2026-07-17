@@ -35,7 +35,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 //#endif
 
-public class BotUtil {
+public class BotSpawnUtil {
     private static final Set<String> SpawningBots = new HashSet<>();
 
     //#if MC >= 12104

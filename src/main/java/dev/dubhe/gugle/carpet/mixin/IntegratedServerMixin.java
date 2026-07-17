@@ -1,7 +1,6 @@
 package dev.dubhe.gugle.carpet.mixin;
 
-import dev.dubhe.gugle.carpet.api.inject.IFakeResident;
-import dev.dubhe.gugle.carpet.tools.player.FakePlayerResident;
+import dev.dubhe.gugle.carpet.fakes.GCAMinecraftServerInterface;
 import net.minecraft.client.server.IntegratedServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,8 +12,7 @@ public class IntegratedServerMixin {
     @Inject(method = "halt", at = @At("HEAD"))
     public void saveResident(boolean bl, CallbackInfo ci) {
         if (((IntegratedServer) (Object) this).isRunning()) {
-            FakePlayerResident resident = ((IFakeResident) this).getGCAResident();
-            if (resident != null) resident.save();
+            ((GCAMinecraftServerInterface) this).gca$getGCAInstance().saveResident();
         }
     }
 }
