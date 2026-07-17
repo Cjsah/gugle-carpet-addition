@@ -1,7 +1,7 @@
 package dev.dubhe.gugle.carpet.mixin;
 
 import carpet.patches.EntityPlayerMPFake;
-import dev.dubhe.gugle.carpet.tools.player.FakePlayerAutoRespawn;
+import dev.dubhe.gugle.carpet.fakes.GCAServerInterface;
 import net.minecraft.network.Connection;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
@@ -22,7 +22,8 @@ public class PlayerListMixin {
                                      //#endif
                                      CallbackInfo ci) {
         if (serverPlayer instanceof EntityPlayerMPFake) {
-            FakePlayerAutoRespawn.onFakePlayerSpawned(serverPlayer.getUUID());
+            ((GCAServerInterface)serverPlayer.level().getServer()).gca$getGCAInstance()
+                .getAutoRespawn().onFakePlayerSpawned(serverPlayer.getUUID());
         }
     }
 }

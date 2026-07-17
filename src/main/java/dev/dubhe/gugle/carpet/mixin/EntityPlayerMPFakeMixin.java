@@ -7,8 +7,8 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.authlib.GameProfile;
 import dev.dubhe.gugle.carpet.GcaSetting;
+import dev.dubhe.gugle.carpet.fakes.GCAServerInterface;
 import dev.dubhe.gugle.carpet.tools.player.FakePlayerAutoReplaceTool;
-import dev.dubhe.gugle.carpet.tools.player.FakePlayerAutoRespawn;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -61,7 +61,8 @@ public abstract class EntityPlayerMPFakeMixin extends ServerPlayer {
     private void onDie(DamageSource cause, CallbackInfo ci) {
         if ("false".equals(GcaSetting.fakePlayerAutoRespawn)) return;
         EntityPlayerActionPack pack = ((ServerPlayerInterface) this).getActionPack();
-        FakePlayerAutoRespawn.onFakePlayerDied(this.uuid, pack);
+        ((GCAServerInterface)this.level().getServer()).gca$getGCAInstance()
+            .getAutoRespawn().onFakePlayerDied(this.uuid, pack);
     }
 
     //#if MC >= 12104

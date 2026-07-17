@@ -3,7 +3,7 @@ package dev.dubhe.gugle.carpet.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.dubhe.gugle.carpet.entry.instance.GCAServerInstance;
-import dev.dubhe.gugle.carpet.fakes.GCAMinecraftServerInterface;
+import dev.dubhe.gugle.carpet.fakes.GCAServerInterface;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MinecraftServer.class)
-public class MinecraftServerMixin implements GCAMinecraftServerInterface {
+public class MinecraftServerMixin implements GCAServerInterface {
 
     @Unique
     private GCAServerInstance gca$instance = null;

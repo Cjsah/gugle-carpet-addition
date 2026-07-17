@@ -8,12 +8,16 @@ import javax.annotation.Nullable;
 
 public class GCAServerInstance {
     private final MinecraftServer server;
+    private final FakePlayerAutoRespawn autoRespawn;
+
     @Nullable
     private FakePlayerResident resident = null;
     private boolean initiating = false;
 
+
     public GCAServerInstance(MinecraftServer server) {
         this.server = server;
+        this.autoRespawn = new FakePlayerAutoRespawn(server);
     }
 
     public void startLoadLevel() {
@@ -38,6 +42,10 @@ public class GCAServerInstance {
 
     public void startSaveLevel() {
         if (this.resident != null && !this.initiating) this.resident.save();
+    }
+
+    public FakePlayerAutoRespawn getAutoRespawn() {
+        return this.autoRespawn;
     }
 
     public void saveResident() {
