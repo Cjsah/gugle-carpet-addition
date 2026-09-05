@@ -42,5 +42,6 @@ preprocess {
 
     for (final def node in getNodes()) {
         findProject(node.project).ext.mcVersion = node.mcVersion
+        findProject(node.project).ext.wrappableMod = true
     }
 }
