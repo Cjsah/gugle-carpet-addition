@@ -54,3 +54,17 @@ for (final def version in ["1.21.1", "26.1.2"]) {
 
 include(":ModWrapper")
 include(":neoforge-debug")
+
+// An unqualified `build` is expanded by Gradle to every project that exposes a
+// task with that name. Keep the development-only launcher out of the normal
+// project build while still allowing its tasks to be invoked explicitly.
+def requestedTasks = gradle.startParameter.taskNames
+def explicitlyTargetsNeoForgeDebug = requestedTasks.any {
+    it == 'neoforge-debug' ||
+    it.startsWith('neoforge-debug:') ||
+    it == ':neoforge-debug' ||
+    it.startsWith(':neoforge-debug:')
+}
+if ('build' in requestedTasks && !explicitlyTargetsNeoForgeDebug) {
+    gradle.startParameter.excludedTaskNames = gradle.startParameter.excludedTaskNames + [':neoforge-debug:build']
+}
