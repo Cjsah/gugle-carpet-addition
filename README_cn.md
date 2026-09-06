@@ -10,6 +10,9 @@
 
 ## GCA
 
+> [!NOTE]
+> 如果需要通过 Sinytra Connector 在 NeoForge 上运行 GCA，请从 [NeoForge Sinytra 兼容版本发布页](https://github.com/Gu-ZT/gugle-carpet-addition/releases/tag/neoforge-sinytra-compat)下载所需的适配插件。
+
 #### 如果你需要Minecraft 1.13版本的GCA, [请点击此处](https://github.com/Gu-ZT/TISCarpet113WithGCA/releases/latest)
 
 ### GCA页面大小 (gcaPageSize)
