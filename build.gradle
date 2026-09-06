@@ -41,7 +41,8 @@ preprocess {
     mc260200.link(mc260300, null)
 
     for (final def node in getNodes()) {
-        findProject(node.project).ext.mcVersion = node.mcVersion
-        findProject(node.project).ext.wrappableMod = true
+        def proj = findProject(node.project)
+        proj.ext.mcVersion = node.mcVersion
+        proj.ext.wrappableMod = true
     }
 }
