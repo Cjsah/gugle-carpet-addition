@@ -11,8 +11,8 @@
 
 > [!NOTE]
 > To run GCA on NeoForge with Sinytra Connector, download the required compatibility plugin from the [NeoForge Sinytra compatibility release](https://github.com/Gu-ZT/gugle-carpet-addition/releases/tag/neoforge-sinytra-compat).
-
-#### If you need GCA for Minecraft 1.13, [please click here](https://github.com/Gu-ZT/TISCarpet113WithGCA/releases/latest)
+>
+> If you need GCA for Minecraft 1.13, [please click here](https://github.com/Gu-ZT/TISCarpet113WithGCA/releases/latest).
 
 ### gcaPageSize
 
