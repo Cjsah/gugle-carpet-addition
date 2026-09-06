@@ -1,6 +1,6 @@
 # Gugle's Carpet Addition
 
-[![Development Builds](https://github.com/Gu-ZT/gugle-carpet-addition/workflows/Mod%20Build/badge.svg)](https://github.com/Gu-ZT/gugle-carpet-addition/actions/workflows/build.yml)
+[![Mod Build](https://github.com/Gu-ZT/gugle-carpet-addition/actions/workflows/build.yml/badge.svg?branch=releases%2Fpreprocess)](https://github.com/Gu-ZT/gugle-carpet-addition/actions/workflows/build.yml)
 [![CurseForge downloads](http://cf.way2muchnoise.eu/full_662867_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/guglecarpetaddition)
 [![Modrinth downloads](https://img.shields.io/modrinth/dt/gca?color=00AF5C&label=Modrinth%20downloads&logo=modrinth)](https://modrinth.com/mod/gca)
 [![GitHub downloads](https://img.shields.io/github/downloads/Gu-ZT/gugle-carpet-addition/total?label=Github%20downloads&logo=github)](https://github.com/Gu-ZT/gugle-carpet-addition/releases)
